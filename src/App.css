@@ -1,0 +1,208 @@
+/* src/App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-board {
+  text-align: center;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.board {
+  margin: 10px;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square-container {
+  margin: 5px;
+}
+
+.square {
+  font-size: 36px;
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.square.x-square {
+  color: #2196f3; /* Blue for X */
+}
+
+.square.o-square {
+  color: #e91e63; /* Pink for O */
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values for the hover box shadow */
+}
+
+.rematch-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.rematch-button:hover {
+  background-color: #45a049;
+}
+
+/* Button-like appearance */
+.square.x-square,
+.square.o-square {
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.square.x-square:hover,
+.square.o-square:hover {
+  border-color: #ddd;
+}
+
+.square.x-square:active,
+.square.o-square:active {
+  background-color: #e5e5e5;
+  border-color: #ccc;
+}
+
+/* Add Bootstrap classes */
+.game {
+  padding: 20px;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.scoreboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.scoreboard p {
+  flex: 0 0 100%; /* Full width on small screens, stacking vertically */
+  margin: 5px 0;
+}
+
+/* Additional styling for the switch button */
+.switch-button {
+  margin-top: 10px;
+}
+
+/* Add keyframe animations for winning squares */
+@keyframes twinkling {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.square.x-win,
+.square.o-win {
+  animation: twinkling 1s ease-in-out infinite;
+}
+
+.square.x-pop, .square.o-pop {
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.board-container {
+  background-color: #fff;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increase box-shadow for a more noticeable shadow */
+  padding: 10px; /* Increase padding for more spacing */
+}
+
+.night-mode {
+  background-color: #000;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.night-mode .board-container {
+  background-color: #111;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.night-mode .square {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.night-mode .square:hover {
+  background-color: #444;
+}
+
+.night-mode .rematch-button {
+  background-color: #292929;
+  color: #fff;
+}
+
+.dim-background {
+  background-color: #36393f; /* Discord's dark mode background color */
+  opacity: 0.9; /* Adjust the opacity as needed */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-container {
+  margin: 0;
+  padding: 0;
+}
+
+.sun-icon {
+  color: yellow;
+}
+
+.night-mode .navbar-container {
+  background-color: #36393f; /* Discord's dark mode background color for dim effect */
+  opacity: 0.9; /* Adjust the opacity as needed */
+}
+
+/* Update the existing rule for the navbar background color in night mode */
+.night-mode nav.navbar {
+  background-color: #111 !important; /* Use !important to ensure the style is applied */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.night-mode .navbar-brand {
+  color: #fff !important; /* Set text color to white */
+}
+
+
