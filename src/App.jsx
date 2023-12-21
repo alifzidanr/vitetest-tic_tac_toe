@@ -260,12 +260,24 @@ const App = () => {
       </nav>
     </div>
 
-
-
-         {/* Existing game content */}
-      <div className={`container-fluid ${nightMode ? 'night-mode' : ''}`}>
+{/* Existing game content */}
+<div className={`container-fluid ${nightMode ? 'night-mode' : ''}`}>
         <div className="game">
           <div className="game-board">
+          <div className="board">
+                <div className="board-container">
+                  {[0, 1, 2].map((row) => (
+                    <div className="board-row" key={row}>
+                      {[0, 1, 2].map((col) => (
+                        <div key={col} className="square-container">
+                          {renderSquare(row * 3 + col)}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             <div className="status">{status}</div>
             {vsBot && (
               <div className="scoreboard row">
@@ -296,19 +308,9 @@ const App = () => {
               <div>
                 
               </div>
-              <div className="board">
-                <div className="board-container">
-                  {[0, 1, 2].map((row) => (
-                    <div className="board-row" key={row}>
-                      {[0, 1, 2].map((col) => (
-                        <div key={col} className="square-container">
-                          {renderSquare(row * 3 + col)}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
+
+         
+              
               <button className="btn btn-success rematch-button" onClick={handleRematch}>
                 Rematch
               </button>

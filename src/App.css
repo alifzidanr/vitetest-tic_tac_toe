@@ -205,3 +205,13 @@ body, html {
 }
 
 
+/* Add this CSS to your stylesheet */
+.navbar-container {
+  margin-bottom: -20px; /* Adjust the negative margin to reduce the gap */
+}
+
+.container-fluid {
+  margin-top: -20px; /* Adjust the negative margin to reduce the gap */
+}
+
+
